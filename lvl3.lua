@@ -23,7 +23,11 @@ function scene:create(event)
     local sceneGroup = self.view
 
     local lvl3S = audio.play(lvl3Sound)
+    local top = display.newRect(sceneGroup, 320/2, -100, 500, 10)
+    physics.addBody(top,"static")
 
+    local bottom = display.newRect(sceneGroup, 320/2, 600, 500, 10)
+    physics.addBody(bottom,"static")
    
 
     local back = display.newImageRect(sceneGroup, "city.png", _W/2, _H/2)
