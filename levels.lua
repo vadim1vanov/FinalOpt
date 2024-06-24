@@ -20,6 +20,10 @@ end
 local function push_3()
    composer.gotoScene("lvl_3_transition" ,{effect = "fade", time = 800} )
 end
+
+local function push_4()
+   composer.gotoScene("lvl_4_transition" ,{effect = "fade", time = 800} )
+end
 -----------------------------------------------------------------------
 -- BEGINNING OF YOUR IMPLEMENTATION
 ---------------------------------------------------------------------------------
@@ -120,6 +124,25 @@ function scene:show( event )
         }
         )
 
+        local fourth_lvl = widget.newButton(
+        {
+           shape = "roundedRect",
+           radius = 10,
+           width = 70,
+           height = 70,
+           x = _W/2 + 200, y = _H/2 - 10,
+           fontSize = 40,
+           fillColor = {default={120/255, 10/255, 210/255}, over={ 90/255, 10/255, 60/255}},
+           labelColor = {default={250/255, 250/255, 250/255}, over={237/255, 238/255, 240/255}},
+           label = "4",
+           font = "BalsamiqSans-Bold.ttf",
+           onPress = function(event)
+                timer.performWithDelay(0, push_4)
+           end
+           
+        }
+        )
+
 
 
 
@@ -129,6 +152,7 @@ function scene:show( event )
         sceneGroup:insert(first_lvl)
         sceneGroup:insert(second_lvl)
         sceneGroup:insert(third_lvl)
+        sceneGroup:insert(fourth_lvl)
 
       
 end
