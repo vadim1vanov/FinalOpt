@@ -117,6 +117,7 @@ function scene:show( event )
                 composer.removeScene("gameOver")
                 
                 composer.removeScene("lvl3")
+                composer.removeScene("lvl4")
                
         end
 

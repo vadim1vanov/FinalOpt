@@ -24,6 +24,10 @@ end
 local function push_4()
    composer.gotoScene("lvl_4_transition" ,{effect = "fade", time = 800} )
 end
+
+local function push_5()
+   composer.gotoScene("lvl5" ,{effect = "fade", time = 800} )
+end
 -----------------------------------------------------------------------
 -- BEGINNING OF YOUR IMPLEMENTATION
 ---------------------------------------------------------------------------------
@@ -73,7 +77,7 @@ function scene:show( event )
            radius = 10,
            width = 70,
            height = 70,
-           x = _W/2 - 100, y = _H/2 - 10,
+           x = _W/2 - 250, y = _H/2 - 10,
            fontSize = 40,
            fillColor = {default={120/255, 10/255, 210/255}, over={ 90/255, 10/255, 60/255}},
            labelColor = {default={250/255, 250/255, 250/255}, over={237/255, 238/255, 240/255}},
@@ -92,7 +96,7 @@ function scene:show( event )
            radius = 10,
            width = 70,
            height = 70,
-           x = _W/2, y = _H/2 - 10,
+           x = _W/2- 150, y = _H/2 - 10,
            fontSize = 40,
            fillColor = {default={120/255, 10/255, 210/255}, over={ 90/255, 10/255, 60/255}},
            labelColor = {default={250/255, 250/255, 250/255}, over={237/255, 238/255, 240/255}},
@@ -111,10 +115,10 @@ function scene:show( event )
            radius = 10,
            width = 70,
            height = 70,
-           x = _W/2 + 100, y = _H/2 - 10,
+           x = _W/2 - 50, y = _H/2 - 10,
            fontSize = 40,
-           fillColor = {default={255/255, 105/255, 0/255}, over={237/255, 238/255, 240/255}},
-           labelColor = {default={245/255, 235/255, 0/255}, over={237/255, 238/255, 240/255}},
+           fillColor = {default={120/255, 10/255, 210/255}, over={ 90/255, 10/255, 60/255}},
+           labelColor = {default={250/255, 250/255, 250/255}, over={237/255, 238/255, 240/255}},
            label = "3",
            font = "BalsamiqSans-Bold.ttf",
            onPress = function(event)
@@ -130,7 +134,7 @@ function scene:show( event )
            radius = 10,
            width = 70,
            height = 70,
-           x = _W/2 + 200, y = _H/2 - 10,
+           x = _W/2 + 50, y = _H/2 - 10,
            fontSize = 40,
            fillColor = {default={120/255, 10/255, 210/255}, over={ 90/255, 10/255, 60/255}},
            labelColor = {default={250/255, 250/255, 250/255}, over={237/255, 238/255, 240/255}},
@@ -143,6 +147,26 @@ function scene:show( event )
         }
         )
 
+        local fifth_lvl = widget.newButton(
+         {
+            shape = "roundedRect",
+            radius = 10,
+            width = 70,
+            height = 70,
+            x = _W/2 + 200, y = _H/2 - 10,
+            fontSize = 40,
+            
+            fillColor = {default={255/255, 55/255, 0/255}, over={237/255, 238/255, 240/255}},
+            labelColor = {default={245/255, 235/255, 0/255}, over={237/255, 238/255, 240/255}},
+            label = "5",
+            font = "BalsamiqSans-Bold.ttf",
+            onPress = function(event)
+                 timer.performWithDelay(0, push_5)
+            end
+            
+         }
+         )
+
 
 
 
@@ -153,6 +177,7 @@ function scene:show( event )
         sceneGroup:insert(second_lvl)
         sceneGroup:insert(third_lvl)
         sceneGroup:insert(fourth_lvl)
+        sceneGroup:insert(fifth_lvl)
 
       
 end

@@ -29,7 +29,7 @@ function scene:create( event )
 
         _W = display.contentWidth
         _H = display.contentHeight
-        bg = display.newImage(sceneGroup, "gameOver.png", _W/2, _H/2)
+        bg = display.newImage(sceneGroup, "back_4.png", _W/2, _H/2)
         bg.height = 340
         bg.width = 720
 
